@@ -164,12 +164,13 @@ jobs:
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: main
-        token: ${{ secrets.RELEASES_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           默认IP：192.168.1.1 默认密码：password
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
+        
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
