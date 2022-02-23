@@ -30,8 +30,7 @@ jobs:
         echo "version=$version"  >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")"  >> $GITHUB_ENV
         
-        #sudo chmod  -R 777 /opt
-        #cd /opt
+        echo "version=$version"
         ls 
         pwd
         mkdir freedy
