@@ -25,10 +25,10 @@ jobs:
       
     - name: Initialization environment
       run: |     
-        version=$(curl -s "https://api.github.com/repos/freedyYang/N1_OpenWrt/tags" | awk -F '"' '/name/{print $4}')
+        version=$(curl -s "https://api.github.com/repos/freedyYang/N1_OpenWrt/tags"  | jq '.name'')
         
-        echo "version=$version"  >> $GITHUB_ENV
-        echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")"  >> $GITHUB_ENV
+      #  echo "version=$version"  >> $GITHUB_ENV
+       # echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")"  >> $GITHUB_ENV
         
         echo "version=$version"
         ls 
