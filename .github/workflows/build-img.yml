@@ -64,14 +64,13 @@ jobs:
         KERNEL_VERSION_NAME: 5.4.180 
         #KERNEL_VERSION_NAME: 5.16.10_5.15.24_5.10.101_5.4.180 
         
-    - name: set firmware img 7z
-      run: |       
-        FIRMWARE=${{ env.PACKAGED_OUTPUTPATH }}/*.7z
+
         
     - name: Upload firmware to WeTransfer
       id: wetransfer
       if:  env.PACKAGED_STATUS == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: |
+        FIRMWARE=${{ env.PACKAGED_OUTPUTPATH }}/*.7z
         curl -fsSL git.io/file-transfer | sh        
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
@@ -81,6 +80,7 @@ jobs:
       id: cowtransfer
       if: env.PACKAGED_STATUS == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
       run: |
+       FIRMWARE=${{ env.PACKAGED_OUTPUTPATH }}/*.7z
         curl -fsSL git.io/file-transfer | sh
         ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
