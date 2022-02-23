@@ -25,7 +25,7 @@ jobs:
       
     - name: Initialization environment
       run: |     
-        version=$(curl -s "https://api.github.com/repos/freedyYang/N1_OpenWrt/tags"  | jq '.name[$0].to')
+        version=$(curl -s "https://api.github.com/repos/freedyYang/N1_OpenWrt/tags" |grep -o' "ARMv8_$Version")
         
         #echo "version=$version"  >> $GITHUB_ENV
         #echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")"  >> $GITHUB_ENV
