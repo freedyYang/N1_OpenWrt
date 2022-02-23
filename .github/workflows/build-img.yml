@@ -41,8 +41,9 @@ jobs:
     - name: Download
       run: |
         cd freedy
+        tag='ARMv8_ROOTFS'
         
-        wget  https://github.com/freedyYang/N1_OpenWrt/releases/download/$version/openwrt-armvirt-64-default-rootfs.tar.gz
+        wget  https://github.com/freedyYang/N1_OpenWrt/releases/download/$tag/openwrt-armvirt-64-default-rootfs.tar.gz
                 
     - name: Check Files
       run: |
@@ -72,7 +73,7 @@ jobs:
         token: ${{ secrets.RELEASES_TOKEN }}  
         body: |
           ## 以下为N1最新固件
-          默认IP：192.168.1.1 默认密码： password
+          默认IP：10.0.0.110 默认密码： password
           Openwrt🚀(注:此版本为个人的精简版。+o版内核更稳定)
           N1全新安装方法：
              1. cd root
@@ -88,7 +89,7 @@ jobs:
        
    
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.1.0
+      uses: dev-drprasad/delete-older-releases@v0.2.0
       with:
         keep_latest: 3
         delete_tags: true
