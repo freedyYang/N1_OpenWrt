@@ -7,7 +7,7 @@ on:
      
 env:
   UPLOAD_COWTRANSFER: true
-  UPLOAD_WERANSFER: true
+  UPLOAD_WETRANSFER: true
   RELEASE: true
   TZ: Asia/Shanghai
 
