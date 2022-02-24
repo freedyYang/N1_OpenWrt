@@ -1,0 +1,24 @@
+
+config samba
+	option workgroup 'WORKGROUP'
+	option charset 'UTF-8'
+	option name 'OpenWrt'
+	option macos '1'
+	option homes '1'
+	option description 'Nas on OpenWRT'
+
+config sambashare
+	option name 'share'
+	option guest_ok 'yes'
+	option inherit_owner 'yes'
+	option read_only 'no'
+	option create_mask '0777'
+	option path '/mnt/sda1/share'
+
+config sambashare
+	option name 'all'
+	option path '/mnt/sda1'
+	option read_only 'no'
+	option users 'root'
+	option create_mask '0777'
+
