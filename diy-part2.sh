@@ -10,8 +10,7 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# Modify default IP
-sed -i 's/192.168.1.1/10.0.0.110/g' package/base-files/files/bin/config_generate
+
 
 # cpufreq
 #sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
@@ -25,7 +24,8 @@ sed -i 's/192.168.1.1/10.0.0.110/g' package/base-files/files/bin/config_generate
 # 添加额外软件包
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-
+# Add 晶晨宝盒
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 
 
 
