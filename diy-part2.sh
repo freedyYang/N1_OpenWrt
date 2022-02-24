@@ -23,10 +23,8 @@ sed -i 's/192.168.1.1/10.0.0.110/g' package/base-files/files/bin/config_generate
 #rm -rf package/lean/luci-theme-argon
 
 # 添加额外软件包
-#ad adguardhome
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome  package/luci-app-adguardhome
-#git clone https://github.com/kongfl888/luci-app-adguardhome.git  package/luci-app-adguardhome
-#git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 
 
 
