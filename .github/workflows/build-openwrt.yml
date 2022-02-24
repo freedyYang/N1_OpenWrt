@@ -67,6 +67,10 @@ jobs:
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
+        
+    - name: Update files
+      run: |
+        [ -e files ] && mv files openwrt/files
 
     - name: Load custom feeds
       run: |
