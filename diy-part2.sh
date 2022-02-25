@@ -22,8 +22,8 @@
 #rm -rf package/lean/luci-theme-argon
 
 # 添加额外软件包
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+#git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
+#git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 # Add 晶晨宝盒
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 
