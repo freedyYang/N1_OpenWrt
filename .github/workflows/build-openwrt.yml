@@ -29,7 +29,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: true
+  UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
   FILE_NAME: ARMv8_ROOTFS
@@ -153,7 +153,7 @@ jobs:
     - name: check FIRMWARE   
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-        cd  $env.FIRMWARE/
+        cd $GITHUB_WORKSPACE/openwrt/bin/targets
         ls 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
