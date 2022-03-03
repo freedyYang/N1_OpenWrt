@@ -153,7 +153,7 @@ jobs:
     - name: check FIRMWARE   
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-        cd $GITHUB_WORKSPACE/openwrt/bin/targets
+        cd $GITHUB_WORKSPACE/openwrt/bin/targets/armvirt/64
         ls 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
